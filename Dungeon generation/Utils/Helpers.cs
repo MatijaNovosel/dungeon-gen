@@ -21,15 +21,15 @@ namespace Dungeon_generation.Utils {
       Room room
     ) {
       int x1 = 0;
-      int y1 = boundaryHeight;
+      int y1 = 0;
       int x2 = boundaryWidth;
-      int y2 = 0;
+      int y2 = boundaryHeight;
 
       return
-        room.TopLeft.X >= x1 &&
-        room.TopLeft.Y >= y1 &&
-        room.BottomRight.X <= x2 &&
-        room.BottomRight.Y <= y2;
+        x1 <= room.TopLeft.X &&
+        y1 <= room.TopLeft.Y &&
+        x2 >= room.BottomRight.X &&
+        y2 >= room.BottomRight.Y;
     }
 
     public static int randInt(int min, int max) {

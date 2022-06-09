@@ -50,6 +50,7 @@ export default defineComponent({
         const rooms = await generateRooms();
         rooms.forEach((room) => {
           ctx.fillStyle = "white";
+          console.log(room.topLeft?.x, room.topLeft?.y);
           ctx.fillRect(
             room.topLeft?.x as number,
             room.topLeft?.y as number,
