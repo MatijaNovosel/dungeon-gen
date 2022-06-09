@@ -1,0 +1,5 @@
+{
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 90,
+  "C_Cpp.clang_format_fallbackStyle": "WebKit"
+}
