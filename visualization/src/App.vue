@@ -1,10 +1,18 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
-  name: "App"
+  name: "App",
+  setup() {
+    const url = "http://localhost:6000";
+
+    const res = axios.get(url, {
+      params: {}
+    });
+  }
 };
 </script>
