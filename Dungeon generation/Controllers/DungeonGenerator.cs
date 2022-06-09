@@ -12,7 +12,7 @@ namespace Dungeon_generation.Controllers {
       _generator = generator;
     }
 
-    [HttpGet("generate-rooms")]
+    [HttpGet("/generate-rooms")]
     public List<Room> Get(
       int attempts,
       int containerWidth,
