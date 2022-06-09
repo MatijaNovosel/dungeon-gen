@@ -30,8 +30,16 @@ namespace Dungeon_generation.Generator {
             Helpers.randInt(0, containerHeight)
           )
         );
-        // To prevent infinite loops overlapping rooms are thrown away
-        if (!rooms.Any(r => Helpers.roomsOverlap(room, r))) {
+        /*
+        
+          To prevent infinite loops overlapping rooms are thrown away.
+          In addition to those which are not within the boundaries of the container.
+
+        */
+        if (
+          Helpers.isInsideBoundaries(containerWidth, containerHeight, room) &&
+          !rooms.Any(r => Helpers.roomsOverlap(room, r))
+        ) {
           rooms.Add(room);
         }
       }

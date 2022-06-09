@@ -15,6 +15,22 @@ namespace Dungeon_generation.Utils {
       return true;
     }
 
+    public static bool isInsideBoundaries(
+      int boundaryWidth,
+      int boundaryHeight,
+      Room room
+    ) {
+      if (
+        0 <= room.TopLeft.X &&
+        boundaryHeight <= room.TopLeft.Y &&
+        boundaryWidth >= room.BottomRight.X &&
+        0 >= room.BottomRight.Y
+      ) {
+        return true;
+      }
+      return false;
+    }
+
     public static int randInt(int min, int max) {
       Random rand = new Random();
       return rand.Next(min, max);
