@@ -36,9 +36,17 @@ namespace Dungeon_generation.Generator {
           In addition to those which are not within the boundaries of the container.
 
         */
+        var isInsideBoundaries = Helpers.isInsideBoundaries(
+          containerWidth,
+          containerHeight,
+          room
+        );
+
+        var anyOverlap = rooms.Any(r => Helpers.roomsOverlap(room, r));
+
         if (
-          Helpers.isInsideBoundaries(containerWidth, containerHeight, room) &&
-          !rooms.Any(r => Helpers.roomsOverlap(room, r))
+          isInsideBoundaries &&
+          !anyOverlap
         ) {
           rooms.Add(room);
         }

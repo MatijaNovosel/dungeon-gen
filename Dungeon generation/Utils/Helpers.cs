@@ -8,7 +8,7 @@ namespace Dungeon_generation.Utils {
         return false;
       }
 
-      if (a.BottomRight.Y > b.TopLeft.Y || b.BottomRight.Y > a.TopLeft.Y) {
+      if (a.BottomRight.Y < b.TopLeft.Y || b.BottomRight.Y < a.TopLeft.Y) {
         return false;
       }
 
@@ -20,15 +20,16 @@ namespace Dungeon_generation.Utils {
       int boundaryHeight,
       Room room
     ) {
-      if (
-        0 <= room.TopLeft.X &&
-        boundaryHeight <= room.TopLeft.Y &&
-        boundaryWidth >= room.BottomRight.X &&
-        0 >= room.BottomRight.Y
-      ) {
-        return true;
-      }
-      return false;
+      int x1 = 0;
+      int y1 = boundaryHeight;
+      int x2 = boundaryWidth;
+      int y2 = 0;
+
+      return
+        room.TopLeft.X >= x1 &&
+        room.TopLeft.Y >= y1 &&
+        room.BottomRight.X <= x2 &&
+        room.BottomRight.Y <= y2;
     }
 
     public static int randInt(int min, int max) {

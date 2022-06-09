@@ -12,13 +12,13 @@ namespace Dungeon_generation.Models {
 
     public Coordinate BottomLeft {
       get {
-        return new Coordinate(TopLeft.X, TopLeft.Y - Height);
+        return new Coordinate(TopLeft.X, TopLeft.Y + Height);
       }
     }
 
     public Coordinate BottomRight {
       get {
-        return new Coordinate(TopLeft.X + Width, TopLeft.Y - Height);
+        return new Coordinate(TopLeft.X + Width, TopLeft.Y + Height);
       }
     }
 
@@ -29,6 +29,13 @@ namespace Dungeon_generation.Models {
       Width = width;
       Height = height;
       TopLeft = topLeft;
+    }
+
+    public override string ToString() {
+      return $@"
+        [{TopLeft.ToString()} - {TopRight.ToString()}]
+        [{BottomLeft.ToString()} - {BottomRight.ToString()}]
+      ";
     }
   }
 }

@@ -9,5 +9,9 @@ namespace Dungeon_generation.Models {
       X = x;
       Y = y;
     }
+
+    public override string ToString() {
+      return $"({X}, {Y})";
+    }
   }
 }

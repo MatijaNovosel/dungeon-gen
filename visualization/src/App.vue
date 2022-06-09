@@ -31,10 +31,10 @@ export default defineComponent({
 
     const generateRooms = async (): Promise<Room[]> => {
       const rooms = await generator.generateRooms(
-        200,
+        50,
         canvasWidth,
         canvasHeight,
-        36,
+        28,
         42,
         36,
         42
@@ -63,7 +63,6 @@ export default defineComponent({
     onMounted(() => {
       const ctx = getCanvasContext();
       if (ctx) {
-        ctx.fillStyle = "black";
         ctx.fillRect(0, 0, canvasWidth, canvasHeight);
       }
     });
@@ -104,6 +103,6 @@ export default defineComponent({
 }
 
 canvas {
-  border: 1px solid black;
+  border-radius: 8px;
 }
 </style>
