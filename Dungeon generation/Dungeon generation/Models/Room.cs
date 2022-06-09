@@ -25,8 +25,10 @@ namespace Dungeon_generation.Models {
     public int Height { get; set; }
     public int Width { get; set; }
 
-    public Room() {
-      TopLeft = new Coordinate(0, 0);
+    public Room(int width, int height, Coordinate topLeft) {
+      Width = width;
+      Height = height;
+      TopLeft = topLeft;
     }
   }
 }

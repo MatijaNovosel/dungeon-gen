@@ -3,7 +3,7 @@ using Dungeon_generation.Models;
 
 namespace Dungeon_generation.Utils {
   public class Helpers {
-    bool roomsOverlap(Room a, Room b) {
+    public static bool roomsOverlap(Room a, Room b) {
       if (a.TopLeft.X > b.BottomRight.X || b.TopLeft.X > a.BottomRight.X) {
         return false;
       }
@@ -13,6 +13,11 @@ namespace Dungeon_generation.Utils {
       }
 
       return true;
+    }
+
+    public static int randInt(int min, int max) {
+      Random rand = new Random();
+      return rand.Next(min, max);
     }
   }
 }
